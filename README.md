@@ -7,6 +7,7 @@ morryAI için hareketli, responsive demo portfolyo. React, TypeScript, Vite ve M
 - Koyu zemin, geniş tipografi, editoryal proje sunumu ve kontrollü animasyonlar.
 - Kaydırmayla kartların yükselerek açılması, kart görsellerinde sınırlı parallax, bölüm başlıklarında satır satır reveal, stüdyo/süreç bloklarında sıralı giriş ve kaydırmaya bağlı süreç çizgisi.
 - Ana görselde ve proje kartlarında imlece tepki veren derinlik; Portal / Otherworld / Forma dünyaları arasında geçiş yapılan geniş sinematik sahne ve genişletilmiş odak görünümü. Mobilde dünyalar dokunarak seçilir.
+- Stüdyo ve iletişim alanlarında yavaşça dolaşan aura ışıkları. Görüş alanından çıkınca animasyon duraklar; azaltılmış harekette aura sabit kalır. Katmanlar CSS ile çizilir, ek medya indirilmez.
 - Masaüstü ve mobilde kullanılabilir gezinme; klavye odağı ve azaltılmış hareket tercihi desteği.
 - Hareket varsayılan olarak cihazın tercihini izler. Header'daki oynat/duraklat düğmesiyle ziyaretçi animasyonları açıkça açabilir veya kapatabilir; seçim sadece bu tarayıcıda saklanır.
 - Konsept işler “stüdyo konsepti” olarak etiketlenir. Müşteri adı, sonuç ve metrikler gerçek proje kanıtı gibi sunulmaz.

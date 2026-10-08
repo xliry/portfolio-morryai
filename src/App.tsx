@@ -4,6 +4,7 @@ import { filters, process, projects, services, studio, type Filter, type Project
 import { MotionPreference, useStudioReducedMotion } from './motion-preference'
 import { useDepth } from './depth'
 import Immersive from './Immersive'
+import AuraBackground from './AuraBackground'
 
 function Arrow({ diagonal = false, className = '' }: { diagonal?: boolean; className?: string }) {
   return <svg className={className} width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d={diagonal ? 'M5 19 19 5M5 5h14v14' : 'M4 12h16m-6-6 6 6-6 6'} stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -120,6 +121,7 @@ function Works({ onProject }: { onProject: (project: Project) => void }) {
 
 function Studio() {
   return <section id="studio" className="studio-section section-shell" aria-labelledby="studio-heading">
+    <AuraBackground variant="studio" />
     <Reveal className="studio-top"><span className="eyebrow section-kicker"><span className="tiny-dot" /> 02 / STÜDYO</span><span className="studio-top-note">HUMAN-LED. AI-POWERED.</span></Reveal>
     <div className="studio-statement"><ScrollHeading id="studio-heading" lines={['İyi fikirlerin', <>sınırı yok.<span className="statement-spark"><Star /></span></>]} /><Reveal delay={0.15} className="studio-description"><p>Biz hayal gücünü teknolojiyle buluşturan yaratıcı bir stüdyoyuz.</p><p>Yapay zekâ bizim için bir araç. Asıl mesele; doğru fikri bulmak, kendine ait bir dünya kurmak ve hissedilen işler üretmek.</p><a href={`mailto:${studio.email}`} className="text-link">Birlikte neler yapabiliriz? <Arrow diagonal /></a></Reveal></div>
     <div className="services">{services.map((service, index) => <Reveal key={service.number} delay={index * 0.1} className="service-card"><span className="service-number">/{service.number}</span><div className="service-title"><h3>{service.title}</h3><Arrow diagonal /></div><p>{service.text}</p><div className="service-tags">{service.tags.map(tag => <span key={tag}>{tag}</span>)}</div></Reveal>)}</div>
@@ -152,6 +154,7 @@ function Footer() {
     } catch { setCopyError(true) }
   }
   return <footer id="contact" className="footer section-shell">
+    <AuraBackground variant="contact" />
     <Reveal className="contact-top"><span className="eyebrow section-kicker"><span className="tiny-dot" /> SIRADAKİ HİKÂYE SENİN OLSUN.</span><span className="contact-note">BÜYÜK FİKİRLERE HER ZAMAN YER VAR.</span></Reveal>
     <a className="contact-heading" href={`mailto:${studio.email}?subject=${encodeURIComponent('morryAI Studio — yeni bir fikir')}`}><ScrollHeading id="contact-heading" lines={['Aklında bir', <span className="contact-line-accent">fikir mi var?</span>]} /><Reveal delay={0.25}><span className="contact-arrow"><Arrow diagonal /></span></Reveal></a>
     <div className="contact-row"><a href={`mailto:${studio.email}`} className="contact-email">{studio.email}</a><button className="copy-button" onClick={copyEmail} aria-label="E-posta adresini kopyala">{copied ? 'Kopyalandı ✓' : 'Adresi kopyala'}{!copied && <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" strokeWidth="1.5" /><path d="M15 8V4H4v11h4" stroke="currentColor" strokeWidth="1.5" /></svg>}</button><span role="status" className="copy-status">{copyError ? 'Adresi seçerek kopyalayabilirsin.' : copied ? 'E-posta adresi kopyalandı.' : ''}</span></div>
