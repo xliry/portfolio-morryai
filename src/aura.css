@@ -22,14 +22,14 @@
 .aura-light-one {
   top: -25%;
   right: -12%;
-  background: radial-gradient(ellipse at center, #cffc982e 0%, #a0ed753b 20%, #72e8b51f 40%, #72e8b500 70%);
+  background: radial-gradient(ellipse at center, rgb(var(--accent-rgb) / .18) 0%, color-mix(in srgb, var(--accent-soft) 20%, transparent) 20%, rgb(var(--accent-rgb) / .09) 40%, rgb(var(--accent-rgb) / 0) 70%);
   transform: translate3d(0, 0, 0) rotate(-22deg) scale(1.2, .85);
 }
 
 .aura-light-two {
   bottom: -50%;
   left: -10%;
-  background: radial-gradient(ellipse at center, #b7df882b 0%, #bded8130 22%, #96ef8a14 43%, #96ef8a00 70%);
+  background: radial-gradient(ellipse at center, color-mix(in srgb, var(--text) 12%, transparent) 0%, color-mix(in srgb, var(--accent-soft) 15%, transparent) 22%, rgb(var(--accent-rgb) / .06) 43%, rgb(var(--accent-rgb) / 0) 70%);
   animation-name: aura-orbit;
   animation-duration: 24s;
   animation-delay: -8s;
@@ -40,7 +40,7 @@
   width: min(55vw, 560px);
   top: -25%;
   right: 24%;
-  background: radial-gradient(ellipse at center, #73dcc014 0%, #7bdbbe1f 20%, #6fd4c610 42%, #6fd4c600 70%);
+  background: radial-gradient(ellipse at center, color-mix(in srgb, var(--accent-soft) 10%, transparent) 0%, color-mix(in srgb, var(--text) 10%, transparent) 20%, rgb(var(--accent-rgb) / .05) 42%, rgb(var(--accent-rgb) / 0) 70%);
   animation-duration: 21s;
   animation-delay: -11s;
   animation-direction: alternate-reverse;
@@ -54,19 +54,19 @@
   width: min(75vw, 750px);
   top: -25%;
   right: -12%;
-  background: radial-gradient(ellipse at center, #fffbe6aa 0%, #faffc680 20%, #edffc747 43%, #edffc700 70%);
+  background: radial-gradient(ellipse at center, color-mix(in srgb, var(--text) 68%, transparent) 0%, color-mix(in srgb, var(--text) 48%, transparent) 20%, color-mix(in srgb, var(--accent-soft) 28%, transparent) 43%, rgb(var(--accent-rgb) / 0) 70%);
 }
 
 .aura-contact .aura-light-two {
   bottom: -25%;
   left: -15%;
-  background: radial-gradient(ellipse at center, #e6fff6a6 0%, #dcffdd7a 22%, #eeffd340 43%, #eeffd300 70%);
+  background: radial-gradient(ellipse at center, color-mix(in srgb, var(--text) 60%, transparent) 0%, color-mix(in srgb, var(--accent-soft) 48%, transparent) 22%, color-mix(in srgb, var(--text) 22%, transparent) 43%, rgb(var(--accent-rgb) / 0) 70%);
 }
 
 .aura-contact .aura-light-three {
   top: 10%;
   right: 20%;
-  background: radial-gradient(ellipse at center, #faffdb88 0%, #fff0cb66 20%, #ffe8c12b 42%, #ffe8c100 70%);
+  background: radial-gradient(ellipse at center, color-mix(in srgb, var(--accent-soft) 50%, transparent) 0%, color-mix(in srgb, var(--text) 36%, transparent) 20%, color-mix(in srgb, var(--text) 14%, transparent) 42%, rgb(var(--accent-rgb) / 0) 70%);
 }
 
 @keyframes aura-drift {

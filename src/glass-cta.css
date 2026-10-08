@@ -10,18 +10,18 @@
 }
 
 .nav .nav-contact.glass-cta {
-  color: #f0f7e8;
-  background: linear-gradient(135deg, #efffd918, #b4e88609), #25301dcc;
-  border-color: #c3e9a54d;
+  color: var(--text);
+  background: linear-gradient(135deg, rgb(var(--accent-rgb) / .10), rgb(var(--accent-rgb) / .025)), color-mix(in srgb, var(--panel) 90%, transparent);
+  border-color: rgb(var(--accent-rgb) / .30);
   box-shadow: inset 0 1px 0 #ffffff24, inset 0 -1px 0 #00000030, 0 4px 16px #00000020;
   transition: transform .35s, border-color .35s, box-shadow .35s;
 }
 
 .button.glass-cta {
-  color: #1b2812;
-  background: linear-gradient(135deg, #efffdfe6, #bce78bc7), #c8efa7b3;
-  border: 1px solid #eeffdc94;
-  box-shadow: inset 0 1px 0 #ffffffa6, inset 0 -1px 0 #68884455, 0 8px 28px #c1f19814;
+  color: var(--accent-ink);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--text) 92%, transparent), color-mix(in srgb, var(--accent-soft) 80%, transparent)), rgb(var(--accent-rgb) / .75);
+  border: 1px solid color-mix(in srgb, var(--text) 64%, transparent);
+  box-shadow: inset 0 1px 0 #ffffffa6, inset 0 -1px 0 color-mix(in srgb, var(--accent-ink) 24%, transparent), 0 8px 28px rgb(var(--accent-rgb) / .12);
   transition: transform .35s, border-color .35s, box-shadow .35s;
 }
 
@@ -34,7 +34,7 @@
   z-index: 0;
   inset: -90% -20%;
   pointer-events: none;
-  background: radial-gradient(ellipse at 30% 50%, #ddffc33b, #ddffc300 65%);
+  background: radial-gradient(ellipse at 30% 50%, color-mix(in srgb, var(--accent-soft) 24%, transparent), rgb(var(--accent-rgb) / 0) 65%);
   animation: glass-glow 7s ease-in-out infinite alternate paused;
 }
 
@@ -57,8 +57,8 @@
 
 .nav .nav-contact.glass-cta:is(:hover, :focus-visible), .button.glass-cta:is(:hover, :focus-visible) {
   transform: translateY(-2px);
-  border-color: #edffdca6;
-  box-shadow: inset 0 1px 0 #ffffff70, 0 8px 26px #a7e46d26;
+  border-color: color-mix(in srgb, var(--accent-soft) 70%, transparent);
+  box-shadow: inset 0 1px 0 #ffffff70, 0 8px 26px rgb(var(--accent-rgb) / .16);
 }
 
 .glass-cta:is(:hover, :focus-visible) .glass-cta-icon { transform: translate(2px, -2px); }

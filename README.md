@@ -4,7 +4,8 @@ morryAI için hareketli, responsive demo portfolyo. React, TypeScript, Vite ve M
 
 ## Tasarım sözleşmesi
 
-- Koyu zemin, geniş tipografi, editoryal proje sunumu ve kontrollü animasyonlar.
+- morryAI kaynak projesindeki Mat Grafit + Electric Cyan teması: `#141414` zemin, `#1E1E1E` yüzey, `#00E5FF` vurgu, `#F4F4F6` metin. Tema tokenları `src/tokens.css` içindedir; cam, aura ve pointer ışıkları bu tokenları paylaşır.
+- Geniş tipografi, editoryal proje sunumu ve kontrollü animasyonlar.
 - Kaydırmayla kartların yükselerek açılması, kart görsellerinde sınırlı parallax, bölüm başlıklarında satır satır reveal, stüdyo/süreç bloklarında sıralı giriş ve kaydırmaya bağlı süreç çizgisi.
 - Ana görselde ve proje kartlarında imlece tepki veren derinlik; Portal / Otherworld / Forma dünyaları arasında geçiş yapılan geniş sinematik sahne ve genişletilmiş odak görünümü. Mobilde dünyalar dokunarak seçilir.
 - Stüdyo ve iletişim alanlarında yavaşça dolaşan aura ışıkları. Görüş alanından çıkınca animasyon duraklar; azaltılmış harekette aura sabit kalır. Katmanlar CSS ile çizilir, ek medya indirilmez.
@@ -76,4 +77,4 @@ Bu bölümün kart metinleri, yaratıcı alan eşlemeleri ve renkleri `src/integ
 - Scroll reveal ve parallax tarayıcıda gözlemlendi; hareket düğmesinin açık/kapalı geçişleri doğrulandı. Cihazın reduced-motion tercihi açıkken açık opt-in ile motion önizlemesi test edildi.
 - Görsel keşifte üç dünya seçimi, genişletilmiş görünüm, Escape ve kapatma düğmesi, body scroll kilidinin kaldırılması ve odağın açma düğmesine dönüşü doğrulandı. 320 px görünümde genişletilmiş sahne viewport'a sığıyor.
 - Entegrasyon vitrininde Görsel (3) / Video (4) / Tümü (5) alan seçimi, sağlayıcı ayrıntıları, seçili bağlantı vurgusu ve akan ışıklar doğrulandı. 320 px mobil ve 768 px tablet yatay taşma göstermedi; azaltılmış hareket ve ekran dışı duraklama kontrol edildi.
-- Docker daemon yerelde çalışmadığı için container build / Nginx sağlık endpoint'i çalıştırılarak doğrulanamadı. Coolify ilk build ve canlı yayın kontrolü bekleniyor.
+- Yerelde Docker daemon çalışmadığı için container build burada çalıştırılmadı. Coolify Dockerfile yayını `8080` portunda healthy duruma geçti; `https://portfolio.morryai.com` ve `/healthz` HTTP 200 ile doğrulandı.

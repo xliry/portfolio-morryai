@@ -4,7 +4,7 @@ import { useStudioReducedMotion } from './motion-preference'
 import './immersive.css'
 
 const worlds = [
-  { name: 'Portal', number: '01', image: '/images/hero-monolith.webp', subtitle: 'Olasılıklara açılan bir kapı.', caption: 'YENİ BİR GERÇEKLİK', position: '63% 53%', alt: 'Volkanik kumulların üzerinde yeşil ışıkla aydınlatılmış dev metal portal' },
+  { name: 'Portal', number: '01', image: '/images/hero-monolith.webp', subtitle: 'Olasılıklara açılan bir kapı.', caption: 'YENİ BİR GERÇEKLİK', position: '63% 53%', alt: 'Volkanik kumulların üzerinde cyan ışıkla aydınlatılmış dev metal portal' },
   { name: 'Otherworld', number: '02', image: '/images/surreal-landscape.webp', subtitle: 'Tanıdık olanın biraz ötesinde.', caption: 'HAYALİN COĞRAFYASI', position: '50% 55%', alt: 'Bulutlar üzerinde yüzen ve şelalelerle çevrili hayali ada' },
   { name: 'Forma', number: '03', image: '/images/editorial-poster.webp', subtitle: 'Biçim, kendi hikâyesini anlatır.', caption: 'BİÇİMİN YENİ DİLİ', position: '50% 52%', alt: 'Forma için hazırlanmış deneysel, heykelsi editoryal görsel' },
 ] as const
@@ -38,7 +38,7 @@ function ImmersiveStage({ selected, onSelect, expanded = false, onExpand, onClos
   const rotateY = useSpring(tiltY, spring)
   const lightX = useSpring(cursorX, spring)
   const lightY = useSpring(cursorY, spring)
-  const spotlight = useMotionTemplate`radial-gradient(650px circle at ${lightX}% ${lightY}%, rgba(208, 247, 149, .14), transparent 68%)`
+  const spotlight = useMotionTemplate`radial-gradient(650px circle at ${lightX}% ${lightY}%, rgb(var(--accent-rgb) / .14), transparent 68%)`
 
   function resetPosition() {
     positionX.set(0); positionY.set(0); tiltX.set(0); tiltY.set(0); cursorX.set(50); cursorY.set(50)

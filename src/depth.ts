@@ -10,7 +10,7 @@ export function useDepth(strength = 4) {
   const lightY = useMotionValue(50)
   const rotateX = useSpring(x, { stiffness: 170, damping: 28 })
   const rotateY = useSpring(y, { stiffness: 170, damping: 28 })
-  const light = useMotionTemplate`radial-gradient(380px circle at ${lightX}% ${lightY}%, rgba(208, 247, 149, 0.17), transparent 70%)`
+  const light = useMotionTemplate`radial-gradient(380px circle at ${lightX}% ${lightY}%, rgb(var(--accent-rgb) / .17), transparent 70%)`
 
   function onPointerMove(event: PointerEvent<HTMLElement>) {
     if (reduced || event.pointerType !== 'mouse') return
