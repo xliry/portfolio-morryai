@@ -45,7 +45,9 @@ Git kaynağı olarak `https://github.com/xliry/portfolio-morryai.git` bağla ve 
 
 Dockerfile bağımlılıkları kurar, uygulamayı derler ve Nginx ile `8080` portunda sunar. Ortam değişkeni, veritabanı veya kalıcı disk gerekmez. Domaini ekleyip **Deploy** seç; yayın sonrası ana sayfayı ve `/healthz` adresini kontrol et.
 
-Sosyal paylaşım ve canonical adresi için isteğe bağlı **build-time** değişkeni / Docker build arg: `SITE_URL=https://senin-portfolio-domainin`. Bu değer yeniden derlemede HTML'e yazılır; normal runtime değişkeni olarak eklemek yeterli olmaz. Domain belirtilmezse canonical ve `og:url` eklenmez. Yerelde `.env.example` dosyasını `.env` olarak kopyalayıp alanı doldurabilirsin.
+Sosyal paylaşım ve canonical adresi varsayılan olarak `https://portfolio.morryai.com` kullanır; Coolify'da ek değişken gerekmez. Başka bir domaine taşınırsa isteğe bağlı **build-time** değişkeni / Docker build arg `SITE_URL=https://yeni-domainin` ile değiştirilebilir. Bu değer yeniden derlemede HTML'e yazılır; normal runtime değişkeni olarak eklemek yeterli olmaz. Yerelde `.env.example` dosyasını `.env` olarak kopyalayıp alanı doldurabilirsin.
+
+OpenGraph ve X paylaşım etiketleri JavaScript çalıştırılmadan okunabilen üretim HTML'inde bulunur. Özel `public/images/social-cover.jpg` kapağı 1200×630 boyutundadır; başlık, açıklama, site adı, mutlak görsel URL'si, MIME türü, boyutlar ve alternatif metin içerir. SVG tasarım kaynağı `docs/social-card.svg` içinde tutulur. Paylaşım uygulamaları eski önizlemeleri önbellekte tutabilir; yeni paylaşımın görünmesi platformun yeniden taramasına bağlıdır.
 
 İmajın sağlık kontrolü `http://127.0.0.1:8080/healthz` kullanır. Coolify, Dockerfile içindeki `HEALTHCHECK` talimatını algılar; panelde ayrıca sağlık kontrolü tanımlamak gerekmez. Ayrıntılar: [resmi Dockerfile rehberi](https://coolify.io/docs/applications/builds/dockerfile), [sağlık kontrolleri](https://coolify.io/docs/applications/configuration/health-checks).
 

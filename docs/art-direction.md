@@ -28,3 +28,7 @@ Required edit: Change the thin acid-lime luminous inner ring to Electric Cyan #0
 Lighting/mood: restrained expensive cinematic editorial campaign art, neutral smoky dusk, sharp delicate cyan emissive accent, natural nuanced reflections and fine film grain.
 Constraints: Color and light edit only; preserve all shapes, location, composition and materials unchanged. Do not add or remove anything. No text, no logo, no watermark, no UI, no humans. No green or lime accent, no sage/olive cast, no rainbow gradient.
 ```
+
+## Social preview card
+
+`public/images/social-cover.jpg` is a 1200 × 630 pixel branded social preview (60,251 bytes, JPEG quality 90). Its editable, self-contained composition lives in `docs/social-card.svg`: existing cyan portal artwork and brand mark are embedded, with deterministic SVG text in Segoe UI/Arial, a graphite readability gradient and Electric Cyan typography. Sharp rasterizes the SVG and encodes the final JPEG; no new image generation or alteration of the hero asset is involved.
