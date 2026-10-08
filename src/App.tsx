@@ -6,6 +6,7 @@ import { useDepth } from './depth'
 import Immersive from './Immersive'
 import AuraBackground from './AuraBackground'
 import GlassCTA from './GlassCTA'
+import FloatingCards from './FloatingCards'
 
 function Arrow({ diagonal = false, className = '' }: { diagonal?: boolean; className?: string }) {
   return <svg className={className} width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d={diagonal ? 'M5 19 19 5M5 5h14v14' : 'M4 12h16m-6-6 6 6-6 6'} stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -47,10 +48,15 @@ function PortfolioDialog({ content, onClose }: { content: ModalContent | null; o
   useEffect(() => {
     const dialog = ref.current
     if (!dialog || !content) return
+    const previousFocus = document.activeElement
     const before = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     dialog.showModal()
-    return () => { dialog.close(); document.body.style.overflow = before }
+    return () => {
+      dialog.close()
+      document.body.style.overflow = before
+      if (previousFocus instanceof HTMLElement && previousFocus.isConnected) previousFocus.focus({ preventScroll: true })
+    }
   }, [content])
 
   if (!content) return null
@@ -81,6 +87,7 @@ function Hero({ onReel }: { onReel: () => void }) {
       <motion.p className="hero-description" initial={reduced ? false : { opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }}>{studio.introduction}</motion.p>
       <motion.div className="hero-actions" initial={reduced ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7, delay: 0.7 }}><GlassCTA href="#works" className="button" icon={<Arrow diagonal />}>Çalışmaları keşfet</GlassCTA><button className="reel-button" onClick={onReel}><span className="play-circle"><Play /></span><span>Showreel izle<span className="reel-hint">Görsel üretim seçkisi</span></span></button></motion.div>
     </div>
+    <FloatingCards rotateX={depth.rotateX} rotateY={depth.rotateY} onReel={onReel} />
     <div className="hero-bottom"><span>BAĞIMSIZ BİR AI CREATIVE STUDIO</span><a href="#works">KEŞFETMEYE DEVAM ET <span className="scroll-arrow">↓</span></a><span className="hero-bottom-right">FİKİRDEN ETKİYE. <Star /></span></div>
   </section>
 }
