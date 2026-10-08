@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
       name: 'portfolio-site-metadata',
       transformIndexHtml(html) {
         return {
-          html: html.replaceAll('content="/images/social-cover.jpg"', `content="${site.origin}/images/social-cover.jpg"`),
+          html: html.replaceAll('content="/images/social-portal.jpg"', `content="${site.origin}/images/social-portal.jpg"`),
           tags: [
             { tag: 'link', attrs: { rel: 'canonical', href: `${site.origin}/` }, injectTo: 'head' },
             { tag: 'meta', attrs: { property: 'og:url', content: `${site.origin}/` }, injectTo: 'head' },

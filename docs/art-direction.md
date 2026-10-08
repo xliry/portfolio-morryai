@@ -29,6 +29,8 @@ Lighting/mood: restrained expensive cinematic editorial campaign art, neutral sm
 Constraints: Color and light edit only; preserve all shapes, location, composition and materials unchanged. Do not add or remove anything. No text, no logo, no watermark, no UI, no humans. No green or lime accent, no sage/olive cast, no rainbow gradient.
 ```
 
-## Social preview card
+## Social preview
 
-`public/images/social-cover.jpg` is a 1200 × 630 pixel branded social preview (60,251 bytes, JPEG quality 90). Its editable, self-contained composition lives in `docs/social-card.svg`: existing cyan portal artwork and brand mark are embedded, with deterministic SVG text in Segoe UI/Arial, a graphite readability gradient and Electric Cyan typography. Sharp rasterizes the SVG and encodes the final JPEG; no new image generation or alteration of the hero asset is involved.
+The active share image is `public/images/social-portal.jpg`: the existing cyan portal artwork encoded as JPEG at quality 90, preserving its full 1586 × 992 composition. It has no typography, logo, crop, recoloring or other graphic layer. Page title and description remain separate OpenGraph / X metadata.
+
+The earlier branded composition in `docs/social-card.svg` and `public/images/social-cover.jpg` is retained as a design source; it is no longer referenced by the sharing metadata.
