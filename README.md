@@ -5,7 +5,10 @@ morryAI için hareketli, responsive demo portfolyo. React, TypeScript, Vite ve M
 ## Tasarım sözleşmesi
 
 - Koyu zemin, geniş tipografi, editoryal proje sunumu ve kontrollü animasyonlar.
+- Kaydırmayla kartların yükselerek açılması, kart görsellerinde sınırlı parallax, bölüm başlıklarında satır satır reveal, stüdyo/süreç bloklarında sıralı giriş ve kaydırmaya bağlı süreç çizgisi.
+- Ana görselde ve proje kartlarında imlece tepki veren derinlik; Portal / Otherworld / Forma dünyaları arasında geçiş yapılan geniş sinematik sahne ve genişletilmiş odak görünümü. Mobilde dünyalar dokunarak seçilir.
 - Masaüstü ve mobilde kullanılabilir gezinme; klavye odağı ve azaltılmış hareket tercihi desteği.
+- Hareket varsayılan olarak cihazın tercihini izler. Header'daki oynat/duraklat düğmesiyle ziyaretçi animasyonları açıkça açabilir veya kapatabilir; seçim sadece bu tarayıcıda saklanır.
 - Konsept işler “stüdyo konsepti” olarak etiketlenir. Müşteri adı, sonuç ve metrikler gerçek proje kanıtı gibi sunulmaz.
 - Metinler, proje verileri ve iletişim bilgileri için düzenleme noktası: `src/data.ts`.
 - Görseller ve fontlar depodan sunulur; sayfanın açılması üçüncü taraf medya servislerine bağlı değildir.
@@ -62,4 +65,6 @@ Bu depo dağıtım dosyalarını sağlar; canlı domain ve Coolify yayını ayr�
 - İsteğe bağlı `SITE_URL` ile mutlak paylaşım görseli, canonical ve `og:url` üretimi bellekte derlenerek doğrulandı.
 - Tarayıcıda kategori filtreleri (6 / 4 / 2), proje penceresi, Escape ile kapatma, yerel video oynatma, mobil menü ve e-posta kopyalama kontrol edildi.
 - Masaüstü, 390 px ve 320 px mobil görünüm kontrol edildi; yatay taşma bulunmadı.
+- Scroll reveal ve parallax tarayıcıda gözlemlendi; hareket düğmesinin açık/kapalı geçişleri doğrulandı. Cihazın reduced-motion tercihi açıkken açık opt-in ile motion önizlemesi test edildi.
+- Görsel keşifte üç dünya seçimi, genişletilmiş görünüm, Escape ve kapatma düğmesi, body scroll kilidinin kaldırılması ve odağın açma düğmesine dönüşü doğrulandı. 320 px görünümde genişletilmiş sahne viewport'a sığıyor.
 - Docker daemon yerelde çalışmadığı için container build / Nginx sağlık endpoint'i çalıştırılarak doğrulanamadı. Coolify ilk build ve canlı yayın kontrolü bekleniyor.
