@@ -10,6 +10,7 @@ morryAI için hareketli, responsive demo portfolyo. React, TypeScript, Vite ve M
 - Stüdyo ve iletişim alanlarında yavaşça dolaşan aura ışıkları. Görüş alanından çıkınca animasyon duraklar; azaltılmış harekette aura sabit kalır. Katmanlar CSS ile çizilir, ek medya indirilmez.
 - Ana sayfa ve header CTA'larında cam efekti, hareketli ışık yansıması ve hover/klavye odağı tepkisi. Ekran dışında yansımalar duraklar, azaltılmış harekette sabit cam görünümü korunur.
 - Hero'da imlece tepki veren yüzen cam kartlar: görsel keşif, Motion seçkisi ve yaratıcı sürece çalışan kısa yollar. Mobilde CTA altında grid'e geçer; ekran dışında salınım duraklar, azaltılmış harekette kartlar sabit kalır.
+- Entegrasyon vitrininde animasyonlu provider ağı, Görsel / Video alan seçimi ve seçilen node'un ayrıntıları bulunur. Ağ animasyonu ekran dışında ve azaltılmış harekette duraklar.
 - Masaüstü ve mobilde kullanılabilir gezinme; klavye odağı ve azaltılmış hareket tercihi desteği.
 - Hareket varsayılan olarak cihazın tercihini izler. Header'daki oynat/duraklat düğmesiyle ziyaretçi animasyonları açıkça açabilir veya kapatabilir; seçim sadece bu tarayıcıda saklanır.
 - Konsept işler “stüdyo konsepti” olarak etiketlenir. Müşteri adı, sonuç ve metrikler gerçek proje kanıtı gibi sunulmaz.
@@ -60,6 +61,10 @@ Bu depo dağıtım dosyalarını sağlar; canlı domain ve Coolify yayını ayr�
 
 İletişim adresi `support@morryai.com`, platform bağlantısı `https://morryai.com`; ikisi de `src/data.ts` üzerinden değiştirilebilir. Proje isimleri portfolyo sunumu için verilmiş konsept isimleridir.
 
+Entegrasyon vitrini, morryAI kaynak projesinin `lib/generation-service.ts` ve `lib/providers` adaptörlerinde doğrulanan Google Gemini, WaveSpeed, AnyFast, fal.ai ve Higgsfield desteğini gösterir. Bu statik portfolyo provider API'lerine bağlanmaz ve provider sağlık kontrolü yapmaz; ağ görselleştirmesi canlı bağlantı durumunu bildirmez.
+
+Bu bölümün kart metinleri, yaratıcı alan eşlemeleri ve renkleri `src/integrations-data.ts` üzerinden düzenlenir.
+
 Ürün, portre, editorial ve dünya görselleri ile iki sessiz tanıtım videosu sahibinin morryAI projesindeki mevcut `public/mobile-presets` ve `public/home-showcase` materyallerinden alınmıştır. Bunlar gerçek müşteri referansı olarak sunulmaz. Ana portal görseli bu site için ImageGen ile özgün üretilmiştir: `public/images/hero-monolith.webp`. Tam prompt ve üretim bilgisi: [art direction](docs/art-direction.md).
 
 ## Doğrulama
@@ -70,4 +75,5 @@ Bu depo dağıtım dosyalarını sağlar; canlı domain ve Coolify yayını ayr�
 - Masaüstü, 390 px ve 320 px mobil görünüm kontrol edildi; yatay taşma bulunmadı.
 - Scroll reveal ve parallax tarayıcıda gözlemlendi; hareket düğmesinin açık/kapalı geçişleri doğrulandı. Cihazın reduced-motion tercihi açıkken açık opt-in ile motion önizlemesi test edildi.
 - Görsel keşifte üç dünya seçimi, genişletilmiş görünüm, Escape ve kapatma düğmesi, body scroll kilidinin kaldırılması ve odağın açma düğmesine dönüşü doğrulandı. 320 px görünümde genişletilmiş sahne viewport'a sığıyor.
+- Entegrasyon vitrininde Görsel (3) / Video (4) / Tümü (5) alan seçimi, sağlayıcı ayrıntıları, seçili bağlantı vurgusu ve akan ışıklar doğrulandı. 320 px mobil ve 768 px tablet yatay taşma göstermedi; azaltılmış hareket ve ekran dışı duraklama kontrol edildi.
 - Docker daemon yerelde çalışmadığı için container build / Nginx sağlık endpoint'i çalıştırılarak doğrulanamadı. Coolify ilk build ve canlı yayın kontrolü bekleniyor.

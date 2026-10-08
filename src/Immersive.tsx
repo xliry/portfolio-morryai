@@ -119,7 +119,7 @@ export default function Immersive() {
       <p>Bakış açını değiştir.<br />Bir sonraki dünyanın nasıl hissettirdiğini keşfet.</p>
     </motion.div>
     <ImmersiveStage selected={selected} onSelect={setSelected} onExpand={() => setExpanded(true)} controlRef={expandRef} />
-    <div className="immersive-footnote"><span>ÜÇ DÜNYA. SINIRSIZ OLASILIK.</span><span>İNSAN HAYAL EDER. TEKNOLOJİ GÖRÜNÜR KILAR.</span></div>
+    <div className="immersive-footnote"><span>ÜÇ DÜNYA. SINIRSIZ OLASILIK.</span><a href="#integrations">YARATICI EKOSİSTEMİ KEŞFET ↗</a></div>
     <dialog ref={dialogRef} className="immersive-dialog" aria-label="Genişletilmiş görsel deneyim" onCancel={event => { event.preventDefault(); setExpanded(false) }} onClose={() => setExpanded(false)} onClick={event => { if (event.target === event.currentTarget) setExpanded(false) }}>
       {expanded && <ImmersiveStage selected={selected} onSelect={setSelected} expanded onClose={() => setExpanded(false)} />}
     </dialog>

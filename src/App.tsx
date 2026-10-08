@@ -7,6 +7,7 @@ import Immersive from './Immersive'
 import AuraBackground from './AuraBackground'
 import GlassCTA from './GlassCTA'
 import FloatingCards from './FloatingCards'
+import Integrations from './Integrations'
 
 function Arrow({ diagonal = false, className = '' }: { diagonal?: boolean; className?: string }) {
   return <svg className={className} width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d={diagonal ? 'M5 19 19 5M5 5h14v14' : 'M4 12h16m-6-6 6 6-6 6'} stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -142,7 +143,7 @@ function Process() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start 75%', 'end 50%'] })
   const flow = useSpring(scrollYProgress, { stiffness: 90, damping: 28 })
   return <section ref={ref} id="approach" className="process-section section-shell" aria-labelledby="process-heading">
-    <div className="section-intro"><div><Reveal><span className="eyebrow section-kicker"><span className="tiny-dot" /> 04 / YAKLAŞIM</span></Reveal><ScrollHeading id="process-heading" lines={['Karmaşık teknoloji.', 'Yalın bir süreç.']} mutedLine={1} /></div><Reveal delay={0.15}><p>Bir fikirle başlıyoruz.<br />Birlikte, daha ötesine gidiyoruz.</p></Reveal></div>
+    <div className="section-intro"><div><Reveal><span className="eyebrow section-kicker"><span className="tiny-dot" /> 05 / YAKLAŞIM</span></Reveal><ScrollHeading id="process-heading" lines={['Karmaşık teknoloji.', 'Yalın bir süreç.']} mutedLine={1} /></div><Reveal delay={0.15}><p>Bir fikirle başlıyoruz.<br />Birlikte, daha ötesine gidiyoruz.</p></Reveal></div>
     <div className="process-flow" aria-hidden="true"><motion.span style={{ scaleX: reduced ? 1 : flow }} /></div>
     <div className="process-grid">{process.map((step, index) => <Reveal key={step.title} delay={index * 0.12} className="process-step"><div className="process-step-top"><span>0{index + 1}</span>{index < process.length - 1 ? <Arrow /> : <Star />}</div><h3>{step.title}</h3><p>{step.text}</p></Reveal>)}</div>
   </section>
@@ -200,7 +201,7 @@ export default function App() {
     <a className="skip-link" href="#main">İçeriğe geç</a>
     <motion.div className="scroll-progress" style={{ scaleX: scrollYProgress }} />
     <header className="header"><Brand /><div className="header-navigation" ref={navRef}><button className={`mobile-menu-button ${menuOpen ? 'is-open' : ''}`} aria-label={menuOpen ? 'Menüyü kapat' : 'Menüyü aç'} aria-expanded={menuOpen} aria-controls="main-nav" onClick={() => setMenuOpen(!menuOpen)}><span /><span /></button><nav id="main-nav" className={menuOpen ? 'nav open' : 'nav'} aria-label="Ana menü"><a href="#works" onClick={() => setMenuOpen(false)}>Çalışmalar<span>01</span></a><a href="#studio" onClick={() => setMenuOpen(false)}>Stüdyo<span>02</span></a><a href="#explore" onClick={() => setMenuOpen(false)}>Keşif<span>03</span></a><GlassCTA href="#contact" className="nav-contact" onClick={() => setMenuOpen(false)} icon={<Arrow diagonal />}>Birlikte üretelim</GlassCTA></nav><button className="motion-toggle" aria-pressed={!reduced} aria-label={reduced ? 'Animasyonları aç' : 'Animasyonları kapat'} title={reduced ? 'Animasyonları aç' : 'Animasyonları kapat'} onClick={toggleMotion}>{reduced ? <Play /> : <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M2 1h2.5v10H2zm5.5 0H10v10H7.5z" /></svg>}</button></div></header>
-    <main id="main"><Hero onReel={() => setModal({ type: 'reel' })} /><div className="marquee" aria-hidden="true"><div className={reduced ? 'marquee-track reduced' : 'marquee-track'}>{[0, 1, 2, 3].map(item => <span className="marquee-group" key={item}>IMAGINATION FIRST <Star /> TECHNOLOGY NEXT <Star /> IMPACT ALWAYS <Star /></span>)}</div></div><Works onProject={project => setModal({ type: 'project', project })} /><Studio /><Immersive /><Process /></main>
+    <main id="main"><Hero onReel={() => setModal({ type: 'reel' })} /><div className="marquee" aria-hidden="true"><div className={reduced ? 'marquee-track reduced' : 'marquee-track'}>{[0, 1, 2, 3].map(item => <span className="marquee-group" key={item}>IMAGINATION FIRST <Star /> TECHNOLOGY NEXT <Star /> IMPACT ALWAYS <Star /></span>)}</div></div><Works onProject={project => setModal({ type: 'project', project })} /><Studio /><Immersive /><Integrations /><Process /></main>
     <Footer /><PortfolioDialog content={modal} onClose={() => setModal(null)} />
   </div></MotionConfig></MotionPreference.Provider>
 }
