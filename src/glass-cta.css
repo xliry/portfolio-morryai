@@ -1,0 +1,78 @@
+.glass-cta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  backdrop-filter: blur(12px) saturate(150%);
+}
+
+.nav .nav-contact.glass-cta {
+  color: #f0f7e8;
+  background: linear-gradient(135deg, #efffd918, #b4e88609), #25301dcc;
+  border-color: #c3e9a54d;
+  box-shadow: inset 0 1px 0 #ffffff24, inset 0 -1px 0 #00000030, 0 4px 16px #00000020;
+  transition: transform .35s, border-color .35s, box-shadow .35s;
+}
+
+.button.glass-cta {
+  color: #1b2812;
+  background: linear-gradient(135deg, #efffdfe6, #bce78bc7), #c8efa7b3;
+  border: 1px solid #eeffdc94;
+  box-shadow: inset 0 1px 0 #ffffffa6, inset 0 -1px 0 #68884455, 0 8px 28px #c1f19814;
+  transition: transform .35s, border-color .35s, box-shadow .35s;
+}
+
+.glass-cta-label, .glass-cta-icon { position: relative; z-index: 2; }
+.glass-cta-label { white-space: nowrap; }
+.glass-cta-icon { display: flex; align-items: center; transition: transform .35s cubic-bezier(.22, 1, .36, 1); }
+
+.glass-cta-glow {
+  position: absolute;
+  z-index: 0;
+  inset: -90% -20%;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 30% 50%, #ddffc33b, #ddffc300 65%);
+  animation: glass-glow 7s ease-in-out infinite alternate paused;
+}
+
+.glass-cta::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -80%;
+  left: 0;
+  width: 45%;
+  height: 260%;
+  pointer-events: none;
+  background: linear-gradient(90deg, #ffffff00, #ffffff24 40%, #ffffff66 50%, #ffffff16 60%, #ffffff00);
+  transform: translate3d(-280%, 0, 0) skewX(-22deg);
+  animation: glass-sheen 6.5s cubic-bezier(.4, 0, .2, 1) infinite paused;
+}
+
+.glass-cta[data-active='true'] .glass-cta-glow, .glass-cta[data-active='true']::after { animation-play-state: running; }
+.nav-contact.glass-cta::after { animation-delay: -2s; opacity: .7; }
+
+.nav .nav-contact.glass-cta:is(:hover, :focus-visible), .button.glass-cta:is(:hover, :focus-visible) {
+  transform: translateY(-2px);
+  border-color: #edffdca6;
+  box-shadow: inset 0 1px 0 #ffffff70, 0 8px 26px #a7e46d26;
+}
+
+.glass-cta:is(:hover, :focus-visible) .glass-cta-icon { transform: translate(2px, -2px); }
+.nav .nav-contact.glass-cta:active, .button.glass-cta:active { transform: translateY(0) scale(.98); }
+
+.site[data-motion='reduced'] .glass-cta-glow, .site[data-motion='reduced'] .glass-cta::after { animation: none; }
+.site[data-motion='reduced'] .glass-cta, .site[data-motion='reduced'] .glass-cta-icon { transform: none !important; }
+
+@keyframes glass-sheen {
+  0%, 15% { transform: translate3d(-280%, 0, 0) skewX(-22deg); }
+  48%, 100% { transform: translate3d(360%, 0, 0) skewX(-22deg); }
+}
+
+@keyframes glass-glow {
+  from { transform: translate3d(-12%, 0, 0); }
+  to { transform: translate3d(22%, 0, 0); }
+}

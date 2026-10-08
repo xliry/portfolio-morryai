@@ -36,7 +36,7 @@ button:focus-visible { outline-offset: 4px; }
 .motion-toggle[aria-pressed='true'], .motion-toggle:hover { color: var(--accent); border-color: #90a76c; }
 .nav a { font-size: 12px; font-weight: 500; transition: color .25s; }
 .nav a:hover { color: var(--accent); }
-.nav a > span { font-size: 8px; margin-left: 5px; color: var(--muted); vertical-align: super; }
+.nav a:not(.glass-cta) > span { font-size: 8px; margin-left: 5px; color: var(--muted); vertical-align: super; }
 .nav .nav-contact { display: flex; align-items: center; gap: 24px; border: 1px solid #4c5446; padding: 13px 18px; border-radius: 6px; margin-left: 16px; }
 .nav-contact svg { width: 16px; height: 16px; }
 .mobile-menu-button { display: none; }
@@ -54,8 +54,6 @@ h1 { font-size: clamp(82px, 8.8vw, 136px); font-weight: 550; letter-spacing: -.0
 .hero-description { max-width: 370px; font-size: 14px; line-height: 1.85; color: #b7bdb0; margin: 0 0 31px; }
 .hero-actions { display: flex; align-items: center; gap: 26px; }
 .button { display: inline-flex; gap: 28px; align-items: center; padding: 17px 21px; border-radius: 6px; font-size: 12px; font-weight: 650; transition: transform .25s, background .25s; }
-.button:hover { transform: translateY(-3px); background: #e0ffa4; }
-.button-lime { background: var(--accent); color: #1a2113; }
 .button svg { width: 18px; height: 18px; }
 .reel-button { display: flex; align-items: center; gap: 11px; background: none; padding: 0; font-size: 11px; text-align: left; }
 .play-circle { width: 42px; height: 42px; border: 1px solid #727966; border-radius: 50%; display: grid; place-items: center; transition: background .25s, color .25s; }
